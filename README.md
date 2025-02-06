@@ -1,66 +1,96 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel 11 – Authentification Personnalisée
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Une application web développée avec Laravel 11, offrant un système d’authentification sécurisé et une gestion complète des utilisateurs. Ce projet inclut l’inscription, la connexion, la gestion du profil et la protection des sessions.
 
-## About Laravel
+## ✨ Fonctionnalités
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- 🔐 **Création de compte** avec validation des données
+- 🔑 **Connexion sécurisée** avec gestion des sessions
+- 👤 **Mise à jour du profil utilisateur**
+- 📊 **Tableau de bord dynamique**
+- 🛡️ **Protection CSRF et sécurité avancée**
+- 🚪 **Déconnexion sécurisée** pour protéger les sessions
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🏗️ Technologies Utilisées
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- ⚡ **Laravel 11** – Framework PHP moderne
+- 🐘 **PHP 8.1+** – Langage backend
+- 🗄️ **MySQL / SQLite** – Gestion de la base de données
+- 🎨 **Tailwind CSS** – Pour un design épuré
+- 🚀 **ViteJS** – Optimisation du front-end
 
-## Learning Laravel
+## 🚀 Installation & Configuration
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 🔻 Étape 1 : Cloner le projet
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+git clone https://github.com/utilisateur/mon-projet.git
+cd mon-projet
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 🔻 Étape 2 : Installer les dépendances
 
-## Laravel Sponsors
+```bash
+composer install
+npm install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🔻 Étape 3 : Configurer l’environnement
 
-### Premium Partners
+Créer un fichier `.env` basé sur l’exemple existant :
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+```bash
+cp .env.example .env
+```
 
-## Contributing
+Configurer la base de données :
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```ini
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=nom_de_la_base
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Code of Conduct
+Si tu préfères SQLite, remplace par :
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```ini
+DB_CONNECTION=sqlite
+DB_DATABASE=database/database.sqlite
+```
 
-## Security Vulnerabilities
+### 🔻 Étape 4 : Générer la clé d’application
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+php artisan key:generate
+```
 
-## License
+### 🔻 Étape 5 : Lancer les migrations
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+```bash
+php artisan migrate
+```
+
+### 🔻 Étape 6 : Compiler les fichiers front-end
+
+```bash
+npm run build
+```
+
+### 🔻 Étape 7 : Démarrer le serveur
+
+```bash
+php artisan serve
+```
+
+Ton application est maintenant accessible sur [http://127.0.0.1:8000/](http://127.0.0.1:8000/) 🎉
+
+## 🎯 Utilisation du Projet
+
+- 📝 **Inscription** : Accède à `/register` pour créer un compte
+- 🔑 **Connexion** : Connecte-toi via `/login`
+- 📊 **Tableau de bord** : Interface utilisateur après connexion
+- ⚙️ **Profil** : Modifier les informations personnelles sur `/profile`
+- 🚪 **Déconnexion** : Sécuriser la session avec le bouton Logout
